@@ -12,7 +12,11 @@ class City extends Model
         'name',
     ];
 
+    //RELACIONES A NIVEL DE MODELOS
     public function country(){
         return $this->belongsTo(Country::class);
+    }
+    public function users(){
+        return $this->hasMany(User::class);
     }
 }

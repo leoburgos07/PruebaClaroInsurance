@@ -12,6 +12,7 @@ class Rol extends Model
         'name'
     ];
 
+    //RELACIONES A NIVEL DE MODELOS
     public function users(){
         return $this->hasMany(User::class);
     }

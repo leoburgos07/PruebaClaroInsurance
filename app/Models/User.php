@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -29,12 +30,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //RELACIONES A NIVEL DE MODELOS
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
     public function rol()
     {
         return $this->belongsTo(Rol::class);
     }
-    public function country()
+    public function emails()
     {
-        return $this->belongsTo(Country::class, 'countries_id');
+        return $this->hasMany(Email::class);
     }
 }

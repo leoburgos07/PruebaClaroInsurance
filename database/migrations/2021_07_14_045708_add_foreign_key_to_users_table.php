@@ -14,10 +14,10 @@ class AddForeignKeyToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('rols_id');            
-            $table->foreign('rols_id')->references('id')->on('rols');
-            $table->unsignedBigInteger('countries_id');            
-            $table->foreign('countries_id')->references('id')->on('countries');
+            $table->unsignedBigInteger('rol_id');            
+            $table->foreign('rol_id')->references('id')->on('rols');
+            $table->unsignedBigInteger('city_id');            
+            $table->foreign('city_id')->references('id')->on('cities');
         });
     }
 

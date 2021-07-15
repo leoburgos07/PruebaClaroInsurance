@@ -17,35 +17,35 @@ class CitySeeder extends Seeder
     {
         City::create([
             'name'=>'Santa Marta',
-            'countries_id' => 1
+            'country_id' => 1
         ]);
         City::create([
             'name'=>'Barranquilla',
-            'countries_id' => 1
+            'country_id' => 1
         ]);
         City::create([
             'name'=>'Cartagena',
-            'countries_id' => 1
+            'country_id' => 1
         ]);
         City::create([
             'name'=>'Cali',
-            'countries_id' => 1
+            'country_id' => 1
         ]);
         City::create([
             'name'=>'Buenos aires',
-            'countries_id' => 2
+            'country_id' => 2
         ]);City::create([
             'name'=>'Mar de Plata',
-            'countries_id' => 2
+            'country_id' => 2
         ]);City::create([
             'name'=>'Barcelona',
-            'countries_id' => 3
+            'country_id' => 3
         ]);City::create([
             'name'=>'Madrid',
-            'countries_id' => 3
+            'country_id' => 3
         ]);City::create([
             'name'=>'Valencia',
-            'countries_id' => 3
+            'country_id' => 3
         ]);
         
     }

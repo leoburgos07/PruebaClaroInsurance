@@ -3,26 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Auth;
+use App\Helpers\GeneralHelper;
+
+
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
-    {
-        return view('home');
+    {   
+        
+        $user = DB::table('users')->where('id', Auth::user()->id)->first();
+        $location = GeneralHelper::getLocation($user->city_id);
+        
+        return view('home', compact(
+            'user',
+            'location'
+        ));
     }
 }
