@@ -19,4 +19,8 @@ class City extends Model
     public function users(){
         return $this->hasMany(User::class);
     }
+    public static function loadCities($id){
+        $cities = City::where('country_id', $id)->get();
+        return $cities;
+    }
 }

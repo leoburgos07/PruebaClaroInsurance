@@ -22,6 +22,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//admmin routes
 Route::get('/admin/userList',[App\Http\Controllers\Admincontroller::class, 'index']);
+Route::get('/admin/createUser',[App\Http\Controllers\Admincontroller::class, 'create']);
+Route::post('/admin/createUser',[App\Http\Controllers\Admincontroller::class, 'store']);
+Route::get('/admin/editUser/{id}',[App\Http\Controllers\Admincontroller::class, 'edit']);
+Route::get('/admin/cities/{id}',[App\Http\Controllers\Admincontroller::class, 'getCities']);
 
 

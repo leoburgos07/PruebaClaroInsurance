@@ -19,9 +19,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //$rol = DB::table('rols')->select('id')->where('type', 'Administrador')->first();
         $rol = Rol::where('type','Administrador')->value('id');
-        $pais = Country::where('name','Colombia')->value('id');
         $city = City::where('name','Barcelona')->value('id');
 
             User::create([
