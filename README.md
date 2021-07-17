@@ -12,4 +12,6 @@ El usuario corriente puede ver la lista crear y enviar un email y ver el listado
 <h4>ADMIN     -     admin@gmail.com  Admin1234$</h4>
 <h4>USER      -     prueba@gmail.com   Prueba1234$</h4>
 
+<h4>La paginación se controla desde el lado del servidor, enla vista se ven dos tipos de paginación pero es solo por estética del dataTable</h4>
+
 <h4>****Prueba terminada en un 90% ******</h4>
