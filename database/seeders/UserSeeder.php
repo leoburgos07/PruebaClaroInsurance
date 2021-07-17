@@ -22,8 +22,10 @@ class UserSeeder extends Seeder
         $rol = Rol::where('type','Administrador')->value('id');
         $city = City::where('name','Barcelona')->value('id');
 
+        //Se guardan campos de ambas formas
+
             User::create([
-            'name' => 'Administr truedsd',
+            'name' => 'Administrador unico',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('Admin1234$'),
             'dni' => '12345678910',
@@ -33,78 +35,42 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Leonardo user',
-            'email' => 'leonaddrdo@gmail.com',
-            'password' => bcrypt('Leonardo1234$'),
+            'name' => 'Usuario prueba 1',
+            'email' => 'prueba@gmail.com',
+            'password' => bcrypt('Prueba1234$'),
             'dni' => '09876543210',
             'dateOfBirth' => '20000101',
             'rol_id' => 2,
             'city_id' => 4 
         ]);
         User::create([
-            'name' => 'Leonardo user',
-            'email' => 'leonadsfdfrdo@gmail.com',
-            'password' => bcrypt('Leonardo1234$'),
+            'name' => 'prueba usuario 2',
+            'email' => 'prueba2@gmail.com',
+            'password' => bcrypt('Prueba1234$'),
             'dni' => '09876543210',
             'dateOfBirth' => '20000101',
             'rol_id' => 2,
             'city_id' => 1 
         ]);
         User::create([
-            'name' => 'Leonardo user',
-            'email' => 'leordo@gmail.com',
-            'password' => bcrypt('Leonardo1234$'),
+            'name' => 'Probando user 3',
+            'email' => 'prueba3@gmail.com',
+            'password' => bcrypt('Prueba1234$'),
             'dni' => '09876543210',
             'dateOfBirth' => '20000101',
             'rol_id' => 2,
             'city_id' => 2 
         ]);
         User::create([
-            'name' => 'Leonardo user',
-            'email' => 'leonfrrdo@gmail.com',
-            'password' => bcrypt('Leonardo1234$'),
+            'name' => 'usuario de prueba 4',
+            'email' => 'prueba4@gmail.com',
+            'password' => bcrypt('Probando1234$'),
             'dni' => '09876543210',
             'dateOfBirth' => '20000101',
             'rol_id' => 2,
             'city_id' => 4 
         ]);
-        User::create([
-            'name' => 'Leonardo user',
-            'email' => 'leonwetweardo@gmail.com',
-            'password' => bcrypt('Leonardo1234$'),
-            'dni' => '09876543210',
-            'dateOfBirth' => '20000101',
-            'rol_id' => 2,
-            'city_id' => 3 
-        ]);
-        User::create([
-            'name' => 'Leonardo user',
-            'email' => 'leonafsdfsdrdo@gmail.com',
-            'password' => bcrypt('Leonardo1234$'),
-            'dni' => '09876543210',
-            'dateOfBirth' => '20000101',
-            'rol_id' => 2,
-            'city_id' => 1 
-        ]);
-
-        User::create([
-            'name' => 'Leonardo user',
-            'email' => 'leofdssssnardo@gmail.com',
-            'password' => bcrypt('Leonardo1234$'),
-            'dni' => '09876543210',
-            'dateOfBirth' => '20000101',
-            'rol_id' => 2,
-            'city_id' => 5 
-        ]);
-        User::create([
-            'name' => 'Leonardo user',
-            'email' => 'leonagsdgdrdo@gmail.com',
-            'password' => bcrypt('Leonardo1234$'),
-            'dni' => '09876543210',
-            'dateOfBirth' => '20000101',
-            'rol_id' => 2,
-            'city_id' => 5 
-        ]);
+        
 
 
         

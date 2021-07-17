@@ -13,7 +13,9 @@ class Email extends Model
         'subject',
         'destination',
         'message',
-        'state'
+        'state',
+        'user_id',
+        
     ];
     //RELACIONES A NIVEL DE MODELOS
     public function user(){

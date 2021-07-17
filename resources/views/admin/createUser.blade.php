@@ -3,11 +3,7 @@
 @section('title', "Crear Usuario")
 
 @section('content')
-<script type="text/javascript">
-    var dia = prueba.getDate();
-    var mes = prueba.getMonth();
-    var anio = prueba.getFullYear() - 18;
-</script>
+
 
 <div class="container">
     <form method="POST" id="form" action="{{url('admin/createUser')}}">
@@ -18,42 +14,43 @@
                 <label for="inputName">Nombre</label>
                 <span class="text-danger">*</span>
                 <input type="text" class="form-control" id="inputName" name="inputName">
-                <p id="msgNombre"></p>
+                <p id="msgNombre" class="warnings"></p>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputEmail">Email</label>
                 <span class="text-danger">*</span>
                 <input type="email" class="form-control" id="inputEmail" name="inputEmail">
-                <p id="msgEmail"></p>
+                <p id="msgEmail" class="warnings"></p>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword">Contraseña</label>
                 <span class="text-danger">*</span>
                 <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="1 Caracter especial, mayusculas y números">
-                <p id="msg"></p>
+                <p id="msg" class="warnings"></p>
             </div>
             <div class="form-group col-md-6">
                 <label for="confirmPass">Confirmar contraseña</label>
                 <span class="text-danger">*</span>
                 <input type="password" class="form-control" id="confirmPass" name="confirmPass">
-                <p id="msgConfirm"></p>
+                <p id="msgConfirm" class="warnings"></p>
             </div>
             <div class="form-group col-md-4">
                 <label for="dateBirth">Fecha de nacimiento</label>
                 <span class="text-danger">*</span>
                 <input type="date" class="form-control" id="dateBirth" name="dateBirth" max="{{$anio}}-{{$fecha}}">
-                <p id="msgDate"></p>
+                <p id="msgDate" class="warnings"></p>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputCel">Celular</label>
-                <input type="number" class="form-control" id="inputCel" max="99999999999" name="inputCel">
+                <input type="number" class="form-control" id="inputCel"  name="inputCel">
+                <p id="msgCel" class="warnings"></p>
             </div>
 
             <div class="form-group col-md-4">
                 <label for="inputCc">Cedula</label>
                 <span class="text-danger">*</span>
                 <input type="text" class="form-control" id="inputCc" name="inputCc">
-                <p id="msgCc"></p>
+                <p id="msgCc" class="warnings"></p>
             </div>
             
 
@@ -69,7 +66,7 @@
                         @endforeach
                     </optgroup>
                 </select>
-                <p id="msgPais"></p>
+                <p id="msgPais" class="warnings"></p>
             </div>
 
             <div class="form-group col-md-6">
@@ -80,7 +77,7 @@
                         
                     </optgroup>
                 </select>
-                <p id="msgCiudad"></p>
+                <p id="msgCiudad" class="warnings"></p>
             </div>
 
         </div>

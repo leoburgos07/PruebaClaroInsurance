@@ -33,7 +33,7 @@
                 <td>{{$ages[$count]}}</td>
                 <td>{{$locations[$count]->ciudad}}, {{$locations[$count]->pais}} </td>
                 <td><a type="button" href=/admin/editUser/{{$user->id}}><i class="fas fa-edit"></i></a> 
-                 <a type="button"> <i class="fas fa-trash-alt"></i> </a> </td>
+                 <a type="button" href="/admin/deleteUser/{{$user->id}}"> <i class="fas fa-trash-alt"></i> </a> </td>
                  
             </tr>
             <?php 

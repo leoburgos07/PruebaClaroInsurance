@@ -12,6 +12,10 @@ use App\Models\City;
 
 class Admincontroller extends Controller
 {
+    public function __construct(){
+        // Persmisos para acceder a estos metodos
+        $this->middleware('roledAdmin');
+    }
     public function  index()
     {
 
@@ -51,7 +55,7 @@ class Admincontroller extends Controller
     }
     public function store(Request $req)
     {
-
+    
         
         User::create([
             'name' => $req['inputName'],
@@ -73,12 +77,39 @@ class Admincontroller extends Controller
             return response()->json($ciudades); 
         }
     }
-    public function edit($id){
+    public function edit(User $user){
+
+        $paises = Country::all('name','id');
+        $ciudades = City::All('id','name');
         
-        $user = User::find($id);
+        $anio = date("Y") - 18;
+        $fecha = date("m-d");
+       
         
         return view('/admin/editUser', compact(
-            'user'
+            'user',
+            'paises',
+            'ciudades',
+            'anio',
+            'fecha'
         ));
+    }
+    public function update(Request $req, $id){
+        $user = User::find($id);
+        
+        $user->name = $req->inputName;
+        $user->dateOfBirth = $req->dateBirth;
+        $user->phone = $req->inputCel;
+        $user->city_id = $req->inputCity;
+        $user->save();
+
+
+        return redirect('/admin/userList');
+    }
+    public function delete(User $user){
+      //  $user = User::find($id);
+        $user->delete();
+        return redirect('/admin/userList');
+
     }
 }

@@ -16,17 +16,25 @@ use App\Http\Controllers\Admincontroller;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/auth/login');
 });
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Mail routes
+Route::get('/createEmail',[App\Http\Controllers\HomeController::class, 'createMail']);
+Route::post('/createEmail',[App\Http\Controllers\HomeController::class, 'sendMail']);
+Route::get('/listEmails/{id}',[App\Http\Controllers\HomeController::class, 'listMails']);
+Route::get('/showEmail/{id}',[App\Http\Controllers\HomeController::class, 'showMail']);
+
 //admmin routes
 Route::get('/admin/userList',[App\Http\Controllers\Admincontroller::class, 'index']);
 Route::get('/admin/createUser',[App\Http\Controllers\Admincontroller::class, 'create']);
 Route::post('/admin/createUser',[App\Http\Controllers\Admincontroller::class, 'store']);
-Route::get('/admin/editUser/{id}',[App\Http\Controllers\Admincontroller::class, 'edit']);
+Route::get('/admin/editUser/{user}',[App\Http\Controllers\Admincontroller::class, 'edit']);
+Route::post('/admin/editUser/{id}',[App\Http\Controllers\Admincontroller::class, 'update']);
+Route::get('/admin/deleteUser/{user}',[App\Http\Controllers\Admincontroller::class, 'delete']);
 Route::get('/admin/cities/{id}',[App\Http\Controllers\Admincontroller::class, 'getCities']);
 
 

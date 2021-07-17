@@ -3,27 +3,30 @@
 
 @section('content')
 
+
 <div class="container">
-    <form method="POST" id="form" action="{{url('admin/createUser')}}">
+    <form method="POST" id="formEdit" action="{{ url("admin/editUser/{$user->id}") }}">
+
         {!! csrf_field() !!}
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputName">Nombre</label>
                 <span class="text-danger">*</span>
-                <input type="text" class="form-control" id="inputName" name="inputName">
-                <p id="msgNombre"></p>
+                <input type="text" class="form-control" id="inputName" name="inputName" value="{{$user->name}}">
+                <p id="msgNombre" class="warnings"></p>
             </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
                 <label for="dateBirth">Fecha de nacimiento</label>
                 <span class="text-danger">*</span>
-                <input type="date" class="form-control" id="dateBirth" name="dateBirth" max="{{$anio}}-{{$fecha}}">
-                <p id="msgDate"></p>
+                <input type="date" class="form-control" id="dateBirth" name="dateBirth" max="{{$anio}}-{{$fecha}}" value="{{$user->dateOfBirth}}"> >
+                <p id="msgDate" class="warnings"></p>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
                 <label for="inputCel">Celular</label>
-                <input type="number" class="form-control" id="inputCel" max="99999999999" name="inputCel">
+                <input type="number" class="form-control" id="inputCel" name="inputCel" value="{{$user->phone}}">
+                <p id="msgCel" class="warnings"></p>
             </div>
 
             <div class="form-group col-md-6">
@@ -38,7 +41,7 @@
                         @endforeach
                     </optgroup>
                 </select>
-                <p id="msgPais"></p>
+                <p id="msgPais" class="warnings"></p>
             </div>
 
             <div class="form-group col-md-6">
@@ -46,10 +49,10 @@
                 <span class="text-danger">*</span>
                 <select name="inputCity" id="ciudades" class="form-control">
                     <optgroup label="Selecciona una ciudad">
-
+                        <option value="" selected>-</option>
                     </optgroup>
                 </select>
-                <p id="msgCiudad"></p>
+                <p id="msgCiudad" class="warnings"></p>
             </div>
 
         </div>
