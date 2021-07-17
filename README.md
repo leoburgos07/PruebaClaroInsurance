@@ -11,3 +11,5 @@ El usuario corriente puede ver la lista crear y enviar un email y ver el listado
 <h3>Credenciales: </h3>
 <h4>ADMIN     -     admin@gmail.com  Admin1234$</h4>
 <h4>USER      -     prueba@gmail.com   Prueba1234$</h4>
+
+<h4>****Prueba terminada en un 90% ******</h4>
