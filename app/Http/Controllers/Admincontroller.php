@@ -18,8 +18,8 @@ class Admincontroller extends Controller
     }
     public function  index()
     {
-
-        $users = User::paginate(6);
+        //Paginacion desde el lado del servidor
+        $users = DB::table('users')->where('rol_id',2)->paginate(2);
         $ages = [];
         $locations = [];
         //Se guardan las edades y las locaciones de cada usuario en un array usando las funciones definidas en el helper
