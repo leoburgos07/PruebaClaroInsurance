@@ -1,9 +1,12 @@
 
 <h1>Prueba Claro Insurance</h1>
-
-
+<h3>Ejecutar los siguientes comandos:</h3>
+<p> composer install </p>
+<p> php artisan migrate </p>
+<p> php artisan db:seed </p>
 
 <h3>Funcionamiento:</h3>
+
 <p>Existen dos tipos de roles de usuarios 1. Administrador y 2. Usuario, en los seeders se crean usuarios de prueba. <br>
 El usuario administrador puede crear usuarios, verlos todos, actualizar un usuario y eliminarlo. <br>
 El usuario corriente puede ver la lista crear y enviar un email y ver el listado de los emails enviados por el. </p>
